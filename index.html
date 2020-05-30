@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div class="preloder">
+      <div class="counter">0</div>
+    </div> -->
+    <section>
+      <h2>С днём социального работника!</h2>
+      <div class="carousel-container">
+          <div class="carousel-slide">
+              <img src="./img/pc6.jpg" id="last" alt="">
+              <img src="./img/pc2.jpg" alt="">
+              <img src="./img/pc3.jpg" alt="">
+              <img src="./img/pc5.jpg" alt="">
+              <img src="./img/pc6.jpg" alt="">
+              <img src="./img/pc2.jpg" id="first" alt="">
+          </div>
+      </div>
+
+      <button id="prevBtn">пред.</button>
+      <button id="nextBtn">след.</button>
+
+    </section>
+
+
+    <!-- <script type="text/javascript">
+        const divCounter = document.querySelector('.counter')
+        const divPreloder = document.querySelector('.preloder')
+
+        function counter() {
+            let a = parseInt(document.querySelector(".counter").innerHTML)
+            
+            let count = setInterval(function () {
+                document.querySelector(".counter").innerHTML = (++a).toString()
+                if( a == 8 ){
+                    
+                    clearInterval(count)
+                    setTimeout(function(){
+                        divCounter.classList.add('hide')
+                        divPreloder.classList.add('active')
+                    }, 1500)
+                }
+            }, 700)
+        }
+
+        counter()
+    </script> -->
+    <script src="main.js"></script>
+  </body>
+</html>
