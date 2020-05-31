@@ -25,50 +25,66 @@ const carouselImages = document.querySelectorAll('.carousel-slide img')
 const prevBtn = document.querySelector('#prevBtn')
 const nextBtn = document.querySelector('#nextBtn')
 
+const textDes = document.querySelector('.text')
+
+let text = ['text 4', 'text 1', 'text 2', 'text 3', 'text 4', 'text 1']
 let counter = 1
 const size = carouselImages[0].clientWidth
 
 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
-
+textDes.innerHTML = text[counter]
+textDes.classList.add('active')
+textDes.classList.remove('hide')
 
 nextBtn.addEventListener('click', function(){
     if(counter >= carouselImages.length - 1) return
-    carouselSlide.style.transition = 'transform 1s ease-in-out'
+    remove()
+    carouselSlide.style.transition = 'transform 0.9s ease-in-out'
     counter++
-    console.log(counter)
-    console.log(size)
+    textDes.innerHTML = text[counter]
     carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
+
 })
 
 prevBtn.addEventListener('click', function(){
     if(counter <= 0) return
-    carouselSlide.style.transition = 'transform 1s ease-in-out'
+    remove()
+    carouselSlide.style.transition = 'transform 0.9s ease-in-out'
     counter--
-    console.log(counter)
-    console.log(size)
+    textDes.innerHTML = text[counter]
     carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
-    textDes.classList.add('active')
-    textDes.classList.remove('hide')
+
+    
 })
 
 carouselSlide.addEventListener('transitionend', function(){
     // console.log('good')
+    // textDes.classList.remove('active')
+    // textDes.classList.add('hide')
+    textDes.classList.add('active')
+    textDes.classList.remove('hide')
+    textDes.classList.remove('hide-remove')
+
     if(carouselImages[counter].id === 'last'){
         
         carouselSlide.style.transition = 'none'
         counter = carouselImages.length -2
+        
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
     }
     if(carouselImages[counter].id === 'first'){
         
         carouselSlide.style.transition = 'none'
         counter = carouselImages.length - counter
+        
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
     }
 })
 
-let text = ['text 4', 'text 1', 'text 2', 'text 3', 'text 4', 'text 1']
+function remove(){
+    textDes.classList.add('hide-remove')
+    textDes.classList.remove('active')
+}
 
-const textDes = document.querySelector('.text')
 
-textDes.innerHTML = text[counter]
+
