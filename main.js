@@ -1,29 +1,36 @@
-// const divCounter = document.querySelector('.counter')
-// const divPreloder = document.querySelector('.preloder')
+const divCounter = document.querySelector('.counter')
+const divPreloder = document.querySelector('.preloder')
 
-// function co() {
-//     let a = parseInt(document.querySelector(".counter").innerHTML)
+const prevBtn = document.querySelector('#prevBtn')
+const nextBtn = document.querySelector('#nextBtn')
+
+// prevBtn.classList.add('hide-btn')
+// nextBtn.classList.add('hide-btn')
+
+function co() {
+    let a = parseInt(document.querySelector(".counter").innerHTML)
     
-//     let count = setInterval(function () {
-//         document.querySelector(".counter").innerHTML = (++a).toString()
-//         if( a == 8 ){
+    let count = setInterval(function () {
+        document.querySelector(".counter").innerHTML = (++a).toString()
+        if( a == 2020 ){
             
-//             clearInterval(count)
-//             setTimeout(function(){
-//                 divCounter.classList.add('hide')
-//                 divPreloder.classList.add('active')
-//             }, 1500)
-//         }
-//     }, 700)
-// }
+            clearInterval(count)
+            setTimeout(function(){
+                divCounter.classList.add('hide')
+                divPreloder.classList.add('active')
+            }, 1500)
+        }
+    }, 100)
+}
 
-// co()
+
+
+co()
 
 const carouselSlide = document.querySelector('.carousel-slide')
 const carouselImages = document.querySelectorAll('.carousel-slide img')
 
-const prevBtn = document.querySelector('#prevBtn')
-const nextBtn = document.querySelector('#nextBtn')
+
 
 const textDes = document.querySelector('.text')
 
