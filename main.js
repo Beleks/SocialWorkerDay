@@ -1,3 +1,24 @@
+// const divCounter = document.querySelector('.counter')
+// const divPreloder = document.querySelector('.preloder')
+
+// function co() {
+//     let a = parseInt(document.querySelector(".counter").innerHTML)
+    
+//     let count = setInterval(function () {
+//         document.querySelector(".counter").innerHTML = (++a).toString()
+//         if( a == 8 ){
+            
+//             clearInterval(count)
+//             setTimeout(function(){
+//                 divCounter.classList.add('hide')
+//                 divPreloder.classList.add('active')
+//             }, 1500)
+//         }
+//     }, 700)
+// }
+
+// co()
+
 const carouselSlide = document.querySelector('.carousel-slide')
 const carouselImages = document.querySelectorAll('.carousel-slide img')
 
@@ -12,7 +33,7 @@ carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
 
 nextBtn.addEventListener('click', function(){
     if(counter >= carouselImages.length - 1) return
-    carouselSlide.style.transition = 'transform 0.8s ease-in-out'
+    carouselSlide.style.transition = 'transform 1s ease-in-out'
     counter++
     console.log(counter)
     console.log(size)
@@ -21,11 +42,13 @@ nextBtn.addEventListener('click', function(){
 
 prevBtn.addEventListener('click', function(){
     if(counter <= 0) return
-    carouselSlide.style.transition = 'transform 0.8s ease-in-out'
+    carouselSlide.style.transition = 'transform 1s ease-in-out'
     counter--
     console.log(counter)
     console.log(size)
     carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
+    textDes.classList.add('active')
+    textDes.classList.remove('hide')
 })
 
 carouselSlide.addEventListener('transitionend', function(){
@@ -43,3 +66,9 @@ carouselSlide.addEventListener('transitionend', function(){
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
     }
 })
+
+let text = ['text 4', 'text 1', 'text 2', 'text 3', 'text 4', 'text 1']
+
+const textDes = document.querySelector('.text')
+
+textDes.innerHTML = text[counter]
