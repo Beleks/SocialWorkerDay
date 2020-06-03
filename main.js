@@ -38,6 +38,8 @@ let text = ['text 4', 'text 1', 'text 2', 'text 3', 'text 4', 'text 1']
 let counter = 1
 const size = carouselImages[0].clientWidth
 
+console.log(carouselImages[0])
+
 carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)'
 textDes.innerHTML = text[counter]
 textDes.classList.add('active')
