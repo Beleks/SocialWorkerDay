@@ -311,15 +311,13 @@ let year2019 = {
         'text10'
     ]
 }
+
+
+
 let objNames = [year2008, year2009, year2010, year2011, year2012, year2013, year2014, year2015, year2016, year2017, year2018 , year2019]
 
 
 // ================================================================
-
-
-
-
-
 
 
 const carouselSlide = document.querySelector('.carousel-slide')
