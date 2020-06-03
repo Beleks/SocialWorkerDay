@@ -1,3 +1,27 @@
+const divCounter = document.querySelector('.counter')
+const divPreloder = document.querySelector('.preloder')
+
+const prevBtn = document.querySelector('#prevBtn')
+const nextBtn = document.querySelector('#nextBtn')
+
+function co() {
+    let a = parseInt(document.querySelector(".counter").innerHTML)
+    
+    let count = setInterval(function () {
+        document.querySelector(".counter").innerHTML = (++a).toString()
+        if( a == 2020 ){
+            
+            clearInterval(count)
+            setTimeout(function(){
+                divCounter.classList.add('hide')
+                divPreloder.classList.add('active')
+            }, 1500)
+        }
+    }, 100)
+}
+
+co()
+
 const years = document.querySelectorAll('span')
 
 const anchors = document.querySelectorAll('.block-years div')
@@ -296,31 +320,7 @@ let objNames = [year2008, year2009, year2010, year2011, year2012, year2013, year
 
 
 
-const divCounter = document.querySelector('.counter')
-const divPreloder = document.querySelector('.preloder')
 
-const prevBtn = document.querySelector('#prevBtn')
-const nextBtn = document.querySelector('#nextBtn')
-
-// function co() {
-//     let a = parseInt(document.querySelector(".counter").innerHTML)
-    
-//     let count = setInterval(function () {
-//         document.querySelector(".counter").innerHTML = (++a).toString()
-//         if( a == 2020 ){
-            
-//             clearInterval(count)
-//             setTimeout(function(){
-//                 divCounter.classList.add('hide')
-//                 divPreloder.classList.add('active')
-//             }, 1500)
-//         }
-//     }, 100)
-// }
-
-
-
-// co()
 
 const carouselSlide = document.querySelector('.carousel-slide')
 let text 
